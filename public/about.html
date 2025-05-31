@@ -30,7 +30,29 @@
         <li><a href="about.html" class="nav-link">關於我們</a></li>
         <li><a href="services.html" class="nav-link">服務項目</a></li>
         <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
-        <li><a href="login.html" class="nav-link nav-cta">取得報價</a></li>
+        
+        <!-- 未登入時顯示 -->
+        <li id="loginNavItem">
+          <a href="login.html" class="nav-link nav-cta">取得報價</a>
+        </li>
+        
+        <!-- 登入後顯示 -->
+        <li class="nav-item dropdown" id="userNavItem" style="display: none;">
+          <a href="#" class="nav-link user-menu" id="userMenu">
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name" id="userName">會員</span>
+            <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.html"><i class="fas fa-user"></i>個人資料</a></li>
+            <li><a href="orders.html"><i class="fas fa-clipboard-list"></i>詢價記錄</a></li>
+            <li><a href="favorites.html"><i class="fas fa-heart"></i>產品收藏</a></li>
+            <li><a href="downloads.html"><i class="fas fa-download"></i>技術資料</a></li>
+            <li><a href="messages.html"><i class="fas fa-comments"></i>聯絡紀錄</a></li>
+            <li class="divider"></li>
+            <li class="logout-item"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+          </ul>
+        </li>
       </ul>
 
       <!-- Mobile Menu -->
@@ -39,7 +61,25 @@
         <li><a href="about.html" class="nav-link">關於我們</a></li>
         <li><a href="services.html" class="nav-link">服務項目</a></li>
         <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
-        <li><a href="login.html" class="nav-link nav-cta">取得報價</a></li>
+        
+        <!-- 未登入時顯示 -->
+        <li id="loginNavItemMobile">
+          <a href="login.html" class="nav-link nav-cta">取得報價</a>
+        </li>
+        
+        <!-- 登入後顯示手機版會員選單 -->
+        <div class="mobile-user-section" id="userNavItemMobile">
+          <div class="mobile-user-header">
+            <i class="fas fa-user-circle"></i>
+            <span id="userNameMobile">會員</span>
+          </div>
+          <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i> 個人資料</a></li>
+          <li><a href="orders.html" class="nav-link"><i class="fas fa-clipboard-list"></i> 詢價記錄</a></li>
+          <li><a href="favorites.html" class="nav-link"><i class="fas fa-heart"></i> 產品收藏</a></li>
+          <li><a href="downloads.html" class="nav-link"><i class="fas fa-download"></i> 技術資料</a></li>
+          <li><a href="messages.html" class="nav-link"><i class="fas fa-comments"></i> 聯絡紀錄</a></li>
+          <li><a href="#" class="nav-link" id="logoutBtnMobile" style="color: #e74c3c;"><i class="fas fa-sign-out-alt"></i> 登出</a></li>
+        </div>
       </ul>
     </div>
   </nav>

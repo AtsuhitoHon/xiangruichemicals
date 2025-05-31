@@ -220,3 +220,114 @@ const throttledScroll = throttle(() => {
 if (document.querySelectorAll('.parallax').length > 0) {
   window.addEventListener('scroll', throttledScroll);
 }
+
+function checkLoginStatus() {
+  const user = JSON.parse(localStorage.getItem('user'));
+  
+  if (user) {
+    // 用戶已登入，顯示會員選單
+    const loginNavItem = document.getElementById('loginNavItem');
+    const loginNavItemMobile = document.getElementById('loginNavItemMobile');
+    const userNavItem = document.getElementById('userNavItem');
+    const userNavItemMobile = document.getElementById('userNavItemMobile');
+    
+    if (loginNavItem) loginNavItem.style.display = 'none';
+    if (loginNavItemMobile) loginNavItemMobile.style.display = 'none';
+    if (userNavItem) userNavItem.style.display = 'block';
+    if (userNavItemMobile) userNavItemMobile.style.display = 'block';
+    
+    // 設定會員名稱
+    const displayName = user.name || '會員';
+    const userName = document.getElementById('userName');
+    const userNameMobile = document.getElementById('userNameMobile');
+    
+    if (userName) userName.textContent = displayName;
+    if (userNameMobile) userNameMobile.textContent = displayName;
+  } else {
+    // 用戶未登入，顯示登入按鈕
+    const loginNavItem = document.getElementById('loginNavItem');
+    const loginNavItemMobile = document.getElementById('loginNavItemMobile');
+    const userNavItem = document.getElementById('userNavItem');
+    const userNavItemMobile = document.getElementById('userNavItemMobile');
+    
+    if (loginNavItem) loginNavItem.style.display = 'block';
+    if (loginNavItemMobile) loginNavItemMobile.style.display = 'block';
+    if (userNavItem) userNavItem.style.display = 'none';
+    if (userNavItemMobile) userNavItemMobile.style.display = 'none';
+  }
+}
+
+// 下拉選單功能
+function initDropdown() {
+  const userMenu = document.getElementById('userMenu');
+  const dropdown = document.querySelector('.dropdown');
+  
+  if (userMenu && dropdown) {
+    userMenu.addEventListener('click', function(e) {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    });
+    
+    // 點擊外部關閉下拉選單
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  }
+}
+
+// 登出功能
+function initLogout() {
+  const logoutBtn = document.getElementById('logoutBtn');
+  const logoutBtnMobile = document.getElementById('logoutBtnMobile');
+  
+  function logout() {
+    localStorage.removeItem('user');
+    // 重新檢查登入狀態以更新 UI
+    checkLoginStatus();
+    // 可選：顯示登出成功訊息
+    alert('已成功登出');
+  }
+  
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      logout();
+    });
+  }
+  
+  if (logoutBtnMobile) {
+    logoutBtnMobile.addEventListener('click', function(e) {
+      e.preventDefault();
+      logout();
+    });
+  }
+}
+
+// 初始化會員功能
+function initMemberFeatures() {
+  checkLoginStatus();
+  initDropdown();
+  initLogout();
+}
+
+// ========== 在現有的 DOMContentLoaded 事件中添加 ==========
+// 如果您的 main.js 中已有 DOMContentLoaded 事件，請將 initMemberFeatures() 添加到其中
+// 如果沒有，請使用以下代碼：
+
+document.addEventListener('DOMContentLoaded', function() {
+  // 初始化會員功能
+  initMemberFeatures();
+  
+  // 您現有的其他初始化代碼...
+});
+
+// ========== 監聽 localStorage 變化（可選） ==========
+// 當用戶在其他分頁登入/登出時，自動更新當前頁面
+window.addEventListener('storage', function(e) {
+  if (e.key === 'user') {
+    checkLoginStatus();
+  }
+});
+

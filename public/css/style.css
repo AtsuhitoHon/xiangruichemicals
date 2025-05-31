@@ -1093,3 +1093,141 @@ ul {
     text-align: center;
   }
 }
+/* ======= 會員下拉選單樣式（藍色版本） ======= */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white !important;
+  padding: 0.75rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.user-menu:hover {
+  background: linear-gradient(135deg, #2980b9, #1f5f8b);
+  transform: translateY(-2px);
+  color: white !important;
+}
+
+.user-name {
+  font-size: 0.9rem;
+}
+
+.fa-chevron-down {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown.active .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  margin-top: 0.5rem;
+}
+
+.dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: #2c3e50;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+.dropdown-menu .divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
+}
+
+.dropdown-menu .logout-item a {
+  color: #e74c3c;
+}
+
+.dropdown-menu .logout-item a:hover {
+  background: rgba(231, 76, 60, 0.1);
+  color: #c0392b;
+}
+
+/* 手機版會員選單樣式（藍色版本） */
+.mobile-user-section {
+  display: none;
+  width: 100%;
+  border-top: 2px solid #f0f0f0;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.mobile-user-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #3498db;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 0.5rem;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-width: none;
+  }
+
+  .mobile-user-section {
+    display: block;
+  }
+
+  .nav-item.dropdown {
+    display: none;
+  }
+}
+
