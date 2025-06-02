@@ -1231,3 +1231,11 @@ ul {
   }
 }
 
+.favorite-btn {
+  color: #e74c3c;
+  font-size: 16px;
+  font-weight: bold;
+}
+.favorite-btn:hover {
+  text-decoration: underline;
+}
