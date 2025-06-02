@@ -702,7 +702,7 @@ ul {
 }
 
 /* ======= Contact Section ======= */
-.contact-section {
+.contact-section#contact {
   padding: 6rem 0;
   background: #f8f9fa;
 }
