@@ -1,119 +1,156 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>祥瑞化工實業有限公司 - 環保先鋒，品質領導</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-<nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo">
-        <img src="images/logo.jpg" alt="祥瑞化工Logo">
-        祥瑞化工
-      </a>
-      
-      <!-- Hamburger Menu Button -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      
-      <!-- Desktop Menu -->
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">首頁</a></li>
-        <li><a href="about.html" class="nav-link">關於我們</a></li>
-        <li><a href="services.html" class="nav-link">服務項目</a></li>
-        <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
-        
-        <!-- 未登入時顯示 -->
-        <li id="loginNavItem">
-          <a href="login.html" class="nav-link nav-cta">登入</a>
-        </li>
-        
-        <!-- 登入後顯示 -->
-        <li class="nav-item dropdown" id="userNavItem" style="display: none;">
-          <a href="#" class="nav-link user-menu" id="userMenu">
-            <i class="fas fa-user-circle"></i>
-            <span class="user-name" id="userName">會員</span>
-            <i class="fas fa-chevron-down"></i>
+  <!DOCTYPE html>
+  <html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>祥瑞化工實業有限公司 - 環保先鋒，品質領導</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/orders.css" />
+  </head>        
+    <body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+          <a href="#" class="logo">
+            <img src="images/logo.jpg" alt="祥瑞化工Logo">
+            祥瑞化工
           </a>
-          <ul class="dropdown-menu">
-            <li><a href="profile.html"><i class="fas fa-user"></i>個人資料</a></li>
-            <li><a href="orders.html"><i class="fas fa-clipboard-list"></i>詢價記錄</a></li>
-            <li><a href="favorites.html"><i class="fas fa-heart"></i>產品收藏</a></li>
-            <li class="divider"></li>
-            <li class="logout-item"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i>登出</a></li>
-          </ul>
-        </li>
-      </ul>
-      
-      <!-- Mobile Menu -->
-      <ul class="nav-menu mobile" id="mobileMenu">
-        <li><a href="index.html" class="nav-link">首頁</a></li>
-        <li><a href="about.html" class="nav-link">關於我們</a></li>
-        <li><a href="services.html" class="nav-link">服務項目</a></li>
-        <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
-        
-        <!-- 未登入時顯示 -->
-        <li id="loginNavItemMobile">
-          <a href="login.html" class="nav-link nav-cta">登入</a>
-        </li>
-        
-        <!-- 登入後顯示手機版會員選單 -->
-        <div class="mobile-user-section" id="userNavItemMobile">
-          <div class="mobile-user-header">
-            <i class="fas fa-user-circle"></i>
-            <span id="userNameMobile">會員</span>
+          
+          <!-- Hamburger Menu Button -->
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-          <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i> 個人資料</a></li>
-          <li><a href="orders.html" class="nav-link"><i class="fas fa-clipboard-list"></i> 詢價記錄</a></li>
-          <li><a href="favorites.html" class="nav-link"><i class="fas fa-heart"></i> 產品收藏</a></li>
-          <li><a href="#" class="nav-link" id="logoutBtnMobile" style="color: #e74c3c;"><i class="fas fa-sign-out-alt"></i> 登出</a></li>
+          
+          <!-- Desktop Menu -->
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">首頁</a></li>
+            <li><a href="about.html" class="nav-link">關於我們</a></li>
+            <li><a href="services.html" class="nav-link">服務項目</a></li>
+            <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
+            
+            <!-- 未登入時顯示 -->
+            <li id="loginNavItem">
+              <a href="login.html" class="nav-link nav-cta">登入</a>
+            </li>
+            
+            <!-- 登入後顯示 -->
+            <li class="nav-item dropdown" id="userNavItem" style="display: none;">
+              <a href="#" class="nav-link user-menu" id="userMenu">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name" id="userName">會員</span>
+                <i class="fas fa-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="profile.html"><i class="fas fa-user"></i>個人資料</a></li>
+                <li><a href="orders.html"><i class="fas fa-clipboard-list"></i>詢價記錄</a></li>
+                <li><a href="favorites.html"><i class="fas fa-heart"></i>產品收藏</a></li>
+                <li class="divider"></li>
+                <li class="logout-item"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i>登出</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          <!-- Mobile Menu -->
+          <ul class="nav-menu mobile" id="mobileMenu">
+            <li><a href="index.html" class="nav-link">首頁</a></li>
+            <li><a href="about.html" class="nav-link">關於我們</a></li>
+            <li><a href="services.html" class="nav-link">服務項目</a></li>
+            <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
+            
+            <!-- 未登入時顯示 -->
+            <li id="loginNavItemMobile">
+              <a href="login.html" class="nav-link nav-cta">登入</a>
+            </li>
+            
+            <!-- 登入後顯示手機版會員選單 -->
+            <div class="mobile-user-section" id="userNavItemMobile">
+              <div class="mobile-user-header">
+                <i class="fas fa-user-circle"></i>
+                <span id="userNameMobile">會員</span>
+              </div>
+              <li><a href="profile.html" class="nav-link"><i class="fas fa-user"></i> 個人資料</a></li>
+              <li><a href="orders.html" class="nav-link"><i class="fas fa-clipboard-list"></i> 詢價記錄</a></li>
+              <li><a href="favorites.html" class="nav-link"><i class="fas fa-heart"></i> 產品收藏</a></li>
+              <li><a href="#" class="nav-link" id="logoutBtnMobile" style="color: #e74c3c;"><i class="fas fa-sign-out-alt"></i> 登出</a></li>
+            </div>
+          </ul>
         </div>
-      </ul>
-    </div>
-  </nav>
-<section class="qa-history-section">
-  <div class="qa-history-container">
-    <h2>您的提問紀錄</h2>
-    <ul id="questionList"></ul>
-  </div>
-</section>
-<footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>祥瑞化工實業有限公司</h3>
-          <p>專業化工產品供應商，致力於環保永續發展，為客戶提供最優質的產品與服務。</p>
-        </div>
-        
-        <div class="footer-section">
-          <h3>主要產品</h3>
-          <p><a href="#">氯化鈣 (CaCl₂)</a></p>
-          <p><a href="#">聚氯化鋁 (PAC)</a></p>
-          <p><a href="#">環保化工產品</a></p>
-          <p><a href="#">技術諮詢服務</a></p>
-        </div>
-        
-        <div class="footer-section">
-          <h3>聯絡方式</h3>
-          <p>📍 高雄市永安區保寧里保興二路200號</p>
-          <p>📞 07-691-6119</p>
-          <p>✉️ pac.twn@gmail.com</p>
-        </div>
-      </div>
+      </nav>
       
-      <div class="footer-bottom">
-        <p>&copy; 2025 祥瑞化工實業有限公司. 保留所有權利。</p>
-      </div>
-    </div>
-  </footer>
-<script src="js/orders-questions.js"></script>
-<link rel="stylesheet" href="css/orders-questions.css" />
-</body>
-</html>
+      <!-- Page Title Section -->
+      <section class="page-title-section">
+        <div class="container">
+          <h1>關於我們</h1>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </section>
+
+      <section class="qa-history-section">
+        <div class="qa-history-container">
+          <h2>您的提問紀錄</h2>
+          <ul id="questionList"></ul>
+        </div>
+      </section>
+      
+      <section class="orders-section">
+        <div class="container">
+          <h2>詢問紀錄</h2>
+          <table id="qaTable">
+            <thead>
+              <tr>
+                <th>姓名</th>
+                <th>電子信箱</th>
+                <th>主旨</th>
+                <th>訊息</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS 將在這裡插入資料列 -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h3>祥瑞化工實業有限公司</h3>
+              <p>專業化工產品供應商，致力於環保永續發展，為客戶提供最優質的產品與服務。</p>
+            </div>
+            
+            <div class="footer-section">
+              <h3>主要產品</h3>
+              <p><a href="#">氯化鈣 (CaCl₂)</a></p>
+              <p><a href="#">聚氯化鋁 (PAC)</a></p>
+              <p><a href="#">環保化工產品</a></p>
+              <p><a href="#">技術諮詢服務</a></p>
+            </div>
+            
+            <div class="footer-section">
+              <h3>聯絡方式</h3>
+              <p>📍 高雄市永安區保寧里保興二路200號</p>
+              <p>📞 07-691-6119</p>
+              <p>✉️ pac.twn@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2025 祥瑞化工實業有限公司. 保留所有權利。</p>
+          </div>
+        </div>
+      </footer>
+      <script src="js/main.js"></script>
+      <script type="module" src="js/firebaseAuth.js"></script>
+      <script type="module" src="js/orders.js"></script>
+    
+
+    </body>
+    </html>
