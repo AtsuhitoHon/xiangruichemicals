@@ -24,20 +24,29 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 // 初始化 Firebase
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBbfIAA8DQ-UUdIV5Vmxs-4dIdyylS9h8s",
+//   authDomain: "midworksever.firebaseapp.com",
+//   projectId: "midworksever",
+//   storageBucket: "midworksever.firebasestorage.app",
+//   messagingSenderId: "140424851250",
+//   appId: "1:140424851250:web:7e09ec558a41565b2cf12b",
+//   measurementId: "G-G5TEDKYR0L"
+// };
 const firebaseConfig = {
-  apiKey: "AIzaSyBbfIAA8DQ-UUdIV5Vmxs-4dIdyylS9h8s",
-  authDomain: "midworksever.firebaseapp.com",
-  projectId: "midworksever",
-  storageBucket: "midworksever.firebasestorage.app",
-  messagingSenderId: "140424851250",
-  appId: "1:140424851250:web:7e09ec558a41565b2cf12b",
-  measurementId: "G-G5TEDKYR0L"
+  apiKey: "AIzaSyC75hTAQjOd9ELa-zEKebtAjbBUG3LhOQQ",
+  authDomain: "xiangrui.firebaseapp.com",
+  projectId: "xiangrui",
+  storageBucket: "xiangrui.firebasestorage.app",
+  messagingSenderId: "283398071894",
+  appId: "1:283398071894:web:4350f34027a73d8a853df7"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 auth.languageCode = 'zh-TW';
+
 
 // 第三方登入提供者
 const googleProvider = new GoogleAuthProvider();
@@ -118,6 +127,7 @@ onAuthStateChanged(auth, user => {
     localStorage.removeItem('userName');
   }
 });
+export { auth, db };
 
 // ====== 在 game.html 顯示使用者名稱 ======
 // 在 game.html 頁面中，只需在 <body> 中引入這段或透過 DOMContentLoaded 取得並顯示：

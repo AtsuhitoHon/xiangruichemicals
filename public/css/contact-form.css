@@ -1,0 +1,46 @@
+
+.qa-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.qa-container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.qa-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.qa-container input,
+.qa-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.qa-container button {
+  width: 100%;
+  background-color: #007BFF;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.qa-container button:hover {
+  background-color: #0056b3;
+}

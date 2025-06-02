@@ -1,0 +1,32 @@
+
+.qa-history-section {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+}
+
+.qa-history-container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.qa-history-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.qa-history-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.qa-history-container li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  line-height: 1.6;
+}
