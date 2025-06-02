@@ -47,13 +47,13 @@ async function loadQuestions() {
         <hr>`;
       questionList.appendChild(li);
 
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${data.name || ''}</td>
-        <td>${data.Email || ''}</td>
-        <td>${data.subject || ''}</td>
-        <td>${data.message || data.messge || ''}</td>`;
-      qaTableBody.appendChild(row);
+      // const row = document.createElement('tr');
+      // row.innerHTML = `
+      //   <td>${data.name || ''}</td>
+      //   <td>${data.Email || ''}</td>
+      //   <td>${data.subject || ''}</td>
+      //   <td>${data.message || data.messge || ''}</td>`;
+      // qaTableBody.appendChild(row);
     });
   } catch (err) {
     questionList.innerHTML = '<li>載入提問紀錄時發生錯誤。</li>';
